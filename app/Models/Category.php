@@ -26,7 +26,7 @@ class Category extends Model
         'namecategory',
     ];
 
-    public function lessons()
+    public function musicstores()
     {
         return $this->hasMany(MusicStore::class);
     }

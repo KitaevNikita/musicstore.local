@@ -28,7 +28,7 @@ class MusicController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('musics.create', compact('categories');
+        return view('musics.create', compact('categories'));
     }
 
     /**

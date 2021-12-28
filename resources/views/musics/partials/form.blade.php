@@ -1,9 +1,11 @@
 <form>
   <div class="row ">
     <div class="col">
-      <label for="namecategory">Название категории</label>
-      <input type="text" class="form-control" id="namecategory" name="namecategory"
-      value="{{ $music->category->namecategory ?? old('namecategory') }}">
+    <select class="form-select" aria-label="Default select example" name='category_id'>
+        @foreach($categories as $category)
+            <option value='{{ $category->id }}'>{{ $category->namecategory }}</option>
+        @endforeach
+    </select>
     </div>
   </div>
   <div class="row ">
@@ -43,4 +45,4 @@
   </div>
 <hr>
 <button type="submit" class="btn btn-primary">Сохранить</button>
-<a class="btn btn-danger" href="{{ route('music.index') }}">Отмена</a>
+<a class="btn btn-danger" href="{{ route('musics.index') }}">Отмена</a>

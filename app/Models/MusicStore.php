@@ -31,7 +31,7 @@ class MusicStore extends Model
         'category_id'
     ];
 
-    public function user()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
