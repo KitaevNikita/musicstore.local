@@ -78,6 +78,7 @@ class MusicController extends Controller
     public function update(Request $request, $id)
     {
         $music = MusicStore::findOrFail($id);
+        $music->update($request->all());
         return redirect()->route('musics.index');
     }
 
@@ -91,6 +92,6 @@ class MusicController extends Controller
     {
         $music = MusicStore::findOrFail($id);
         $music->delete();
-        return redirect()->view('musics.index');
+        return redirect()->route('musics.index');
     }
 }

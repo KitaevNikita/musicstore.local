@@ -23,12 +23,6 @@
             <td>{{ $category->namecategory }}</td>
           <td class="text-end">
             <a class="btn btn-sm btn-secondary" href="{{ route('categories.show', $category) }}">Просмотреть</a>
-            <a class="btn btn-sm btn-primary" href="{{ route('categories.edit', $category) }}">Редактировать</a>&nbsp;
-            <form action="{{ route('categories.destroy', $category) }}" method="post" class="float-end">
-              @csrf
-              @method('delete')
-              <button class="btn btn-sm btn-danger" type="submit">Удалить</a>
-            </form>
           </td>
           @csrf
         </tr>

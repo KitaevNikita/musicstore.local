@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -33,6 +34,19 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    /**
+    * Состояние для учетной записи администратора
+    */
+    public function admin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                  'email' => 'admin@test.ru',
+                  'password' => bcrypt('q123456'),
             ];
         });
     }
