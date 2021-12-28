@@ -3,9 +3,9 @@
 @section('content')
 <div class="card">
   <div class="card-header bg-secondary text-white">
-    Список категорий
-    <a class="btn btn-sm btn-primary float-end" href="{{ route('categories.create') }}">
-      Добавить категорию
+    Список музыкальных инструментов
+    <a class="btn btn-sm btn-primary float-end" href="{{ route('musics.create') }}">
+      Добавить инструмент
     </a>
     <i class="fa fa-plus-circle" aria-hidden="true"></i>
     </a>
@@ -13,14 +13,18 @@
   <table class="table table-sm border">
       <thead class="thead-secondary">
         <tr>
-          <th scope="col">Название категории</th>
+          <th scope="col">Категория</th>
+          <th scope="col">Название</th>
+          <th scope="col">Страна производитель</th>
           <th scope="col" class="text-end">Действия</th>
         </tr>
       </thead>
       <tbody>
-      @forelse($categories as $category)
+      @forelse($musics as $music)
         <tr>
             <td>{{ $category->namecategory }}</td>
+            <td>{{ $music->name }}</td>
+            <td>{{ $music->countryoforigin }}</td>
           <td class="text-end">
             <a class="btn btn-sm btn-secondary" href="{{ route('categories.show', $category) }}">Просмотреть</a>
             <a class="btn btn-sm btn-primary" href="{{ route('categories.edit', $category) }}">Редактировать</a>&nbsp;
