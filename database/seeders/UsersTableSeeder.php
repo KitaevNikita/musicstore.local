@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         User::factory()
             ->count(1)
+            ->admin()
             ->create();
     }
 }
