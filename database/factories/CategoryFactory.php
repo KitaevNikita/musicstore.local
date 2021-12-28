@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
     {
         $category = ['Струнные', 'Духовые', 'Ударные', 'Клавишные', 'Язычковые'];
         return [
-            'namecategory' => $category[mt_rand(0, count($category)-1)],
+            'namecategory' => $this->faker->unique()->randomElement($category),
         ];
     }
 }

@@ -14,3 +14,8 @@ Route::resource('categories', CategoryController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('musics', MusicController::class);
+    Route::resource('categories', CategoryController::class);
+});

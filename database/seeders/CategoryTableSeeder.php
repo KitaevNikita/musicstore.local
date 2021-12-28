@@ -16,7 +16,7 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         Category::factory()
-            ->count(10)
+            ->count(5)
             ->has(MusicStore::factory()->count(3))
             ->create();
     }
