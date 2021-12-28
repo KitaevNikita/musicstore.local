@@ -22,13 +22,13 @@
       <tbody>
       @forelse($musics as $music)
         <tr>
-            <td>{{ $category->namecategory }}</td>
+            <td>{{ $music->category->namecategory }}</td>
             <td>{{ $music->name }}</td>
             <td>{{ $music->countryoforigin }}</td>
           <td class="text-end">
-            <a class="btn btn-sm btn-secondary" href="{{ route('categories.show', $category) }}">Просмотреть</a>
-            <a class="btn btn-sm btn-primary" href="{{ route('categories.edit', $category) }}">Редактировать</a>&nbsp;
-            <form action="{{ route('categories.destroy', $category) }}" method="post" class="float-end">
+            <a class="btn btn-sm btn-secondary" href="{{ route('musics.show', $music) }}">Просмотреть</a>
+            <a class="btn btn-sm btn-primary" href="{{ route('musics.edit', $music) }}">Редактировать</a>&nbsp;
+            <form action="{{ route('musics.destroy', $music) }}" method="post" class="float-end">
               @csrf
               @method('delete')
               <button class="btn btn-sm btn-danger" type="submit">Удалить</a>
@@ -39,7 +39,7 @@
         @empty
         <tr>
           <td colspan="3">
-            <h3 class="text-center">Текущие категории отсутствуют</h3>
+            <h3 class="text-center">Музыкальные инструменты отсутствуют</h3>
           </td>
         </tr>
         @endforelse

@@ -15,7 +15,8 @@ class MusicController extends Controller
      */
     public function index()
     {
-        //
+        $musics = MusicStore::all();
+        return view('musics.index', compact('musics'));
     }
 
     /**
@@ -25,7 +26,7 @@ class MusicController extends Controller
      */
     public function create()
     {
-        //
+        return view('musics.create');
     }
 
     /**
@@ -36,7 +37,8 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MusicStore::create($request->all());
+        return redirect()->route('musics.index');
     }
 
     /**
@@ -47,7 +49,8 @@ class MusicController extends Controller
      */
     public function show($id)
     {
-        //
+        $music = MusicStore::findOrFail($id);
+        return view('musics.show', compact('music'));
     }
 
     /**
@@ -58,7 +61,8 @@ class MusicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $music = MusicStore::findOrFail($id);
+        return view('musics.edit', compact('music'));
     }
 
     /**
@@ -70,7 +74,8 @@ class MusicController extends Controller
      */
     public function update(StudentRequest $request, $id)
     {
-        //
+        $music = MusicStore::findOrFail($id);
+        return redirect()->route('musics.index');
     }
 
     /**
@@ -81,6 +86,8 @@ class MusicController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        //
+        $music = MusicStore::findOrFail($id);
+        $music->delete();
+        return redirect()->view('musics.index');
     }
 }
