@@ -75,7 +75,7 @@ class MusicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StudentRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $music = MusicStore::findOrFail($id);
         return redirect()->route('musics.index');

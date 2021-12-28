@@ -14,7 +14,7 @@
     <li class="list-group-item"><strong>Цвет:</strong> {{ $music->colour }}</li>
     <li class="list-group-item"><strong>Цега:</strong> {{ $music->price }}</li>
   <div class="card-body">
-      <a class="btn btn-secondary" href="{{ route('musics.edit', $category) }}">
+      <a class="btn btn-secondary" href="{{ route('musics.edit', $music) }}">
       Редактировать
       </a>
       <a class="btn btn-danger" href="{{ route('musics.index') }}">
