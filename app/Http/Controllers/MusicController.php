@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\MusicStore;
+use App\Models\Category;
 
 class MusicController extends Controller
 {
@@ -26,7 +27,8 @@ class MusicController extends Controller
      */
     public function create()
     {
-        return view('musics.create');
+        $categories = Category::all();
+        return view('musics.create', compact('categories');
     }
 
     /**
@@ -61,8 +63,9 @@ class MusicController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $music = MusicStore::findOrFail($id);
-        return view('musics.edit', compact('music'));
+        return view('musics.edit', compact('music', 'categories'));
     }
 
     /**

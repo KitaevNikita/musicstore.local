@@ -12,7 +12,7 @@
       <a class="btn btn-secondary" href="{{ route('categories.edit', $category) }}">
       Редактировать
       </a>
-      <a class="btn btn-danger" href="{{ route('admin.categories.index') }}">
+      <a class="btn btn-danger" href="{{ route('categories.index') }}">
       Отмена
       </a>
   </div>

@@ -73,9 +73,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StudentRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $category = Category::findOrFail($id);
+        $category->update($request->all());
         return redirect()->route('categories.index');
     }
 
@@ -90,6 +91,6 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return redirect()->view('categories.index');
+        return redirect()->route('categories.index');
     }
 }

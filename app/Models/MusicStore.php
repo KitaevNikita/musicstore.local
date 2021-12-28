@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Group;
+use App\Models\Category;
 
-class Category extends Model
+class MusicStore extends Model
 {
     use HasFactory;
 
@@ -28,6 +28,7 @@ class Category extends Model
         'manufacturercompany',
         'colour',
         'price',
+        'category_id'
     ];
 
     public function user()
