@@ -12,7 +12,7 @@
     <li class="list-group-item"><strong>Страна производитель:</strong> {{ $music->countryoforigin }}</li>
     <li class="list-group-item"><strong>Фирма производитель:</strong> {{ $music->manufacturercompany }}</li>
     <li class="list-group-item"><strong>Цвет:</strong> {{ $music->colour }}</li>
-    <li class="list-group-item"><strong>Цега:</strong> {{ $music->price }}</li>
+    <li class="list-group-item"><strong>Цена:</strong> {{ $music->price }}</li>
   <div class="card-body">
       <a class="btn btn-secondary" href="{{ route('musics.edit', $music) }}">
       Редактировать

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\MusicStore;
 use App\Models\Category;
+use App\Http\Requests\MusicRequest;
 
 class MusicController extends Controller
 {
