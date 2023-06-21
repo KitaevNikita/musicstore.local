@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FormController;
 
 Route::view('/', 'index');
+
+Route::resource('forms', FormController::class);
 
 Route::resource('musics', MusicController::class);
 

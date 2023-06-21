@@ -39,6 +39,7 @@
                     <ul class="navbar-nav mr-auto">
                         <a class="nav-link" href="{{ route('categories.index') }}">Категории</a>
                         <a class="nav-link" href="{{ route('musics.index') }}">Музыкальные инструменты</a>
+                        <a class="nav-link" href="{{ route('forms.index') }}">О нас</a>
                     </ul>
                 </div>
 
