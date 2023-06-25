@@ -24,7 +24,7 @@ class MusicStoreFactory extends Factory
             'countryoforigin' => $country[mt_rand(0, count($country)-1)],
             'manufacturercompany' => $firm[mt_rand(0, count($firm)-1)],
             'colour' => $color[mt_rand(0, count($color)-1)],
-            'price' => mt_rand(0, 50000),
+            'price' => mt_rand(0, 100000),
         ];
     }
 }

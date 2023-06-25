@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Http\Requests\CategoryRequest;
+use App\Models\Com;
+use App\Http\Requests\ComRequest;
 
-class CategoryController extends Controller
+class ComController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('categories.index', compact('categories'));
+        $coms = Com::all();
+        return view('comments.index', compact('coms'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('comments.create');
     }
 
     /**
@@ -36,10 +36,10 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(Request $request)
     {
-        Category::create($request->all());
-        return redirect()->route('categories.index')->with('status', 'Категория успешно добавлена');
+        Com::create($request->all());
+        return redirect()->route('comments.index')->with('status', 'Отзыв успешно добавлен');
     }
 
     /**
@@ -50,8 +50,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
-        return view('categories.show', compact('category'));
+        $com = Com::findOrFail($id);
+        return view('comments.show', compact('com'));
     }
 
     /**
@@ -62,9 +62,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $com = Com::findOrFail($id);
 
-        return view('categories.edit', compact('category'));
+        return view('comments.edit', compact('com'));
     }
 
     /**
@@ -74,11 +74,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->update($request->all());
-        return redirect()->route('categories.index')->with('status', 'Категория успешно изменена');
+        $com = Com::findOrFail($id);
+        $com->update($request->all());
+        return redirect()->route('comments.index')->with('status', 'Отзыв успешно изменен');
     }
 
     /**
@@ -89,9 +89,9 @@ class CategoryController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
+        $com = Com::findOrFail($id);
+        $com->delete();
 
-        return redirect()->route('categories.index')->with('status', 'Категория успешно удалена');
+        return redirect()->route('comments.index')->with('status', 'Отзыв успешно удален');
     }
 }

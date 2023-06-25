@@ -14,6 +14,9 @@
     <li class="list-group-item"><strong>Цвет:</strong> {{ $music->colour }}</li>
     <li class="list-group-item"><strong>Цена:</strong> {{ $music->price }}</li>
   <div class="card-body">
+      <a class="btn btn-primary" href="{{ route('comments.index') }}">
+      Отзывы
+      </a>
       <a class="btn btn-secondary" href="{{ route('musics.edit', $music) }}">
       Редактировать
       </a>
